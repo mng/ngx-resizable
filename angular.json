@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -72,7 +72,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -121,7 +121,48 @@
           }
         }
       }
+    },
+    "ngx-resizable": {
+      "root": "projects/ngx-resizable",
+      "sourceRoot": "projects/ngx-resizable/src",
+      "projectType": "library",
+      "prefix": "rsz",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-resizable/tsconfig.lib.json",
+            "project": "projects/ngx-resizable/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-resizable/src/test.ts",
+            "tsConfig": "projects/ngx-resizable/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-resizable/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-resizable/tsconfig.lib.json",
+              "projects/ngx-resizable/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ngx-resizable-demo"
+  "defaultProject": "ngx-resizable-demo",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleExt": "scss"
+    }
+  }
 }

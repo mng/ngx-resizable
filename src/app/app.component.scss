@@ -1,0 +1,13 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+}
+.icon-big {
+    font-size: 32px;
+    border: 2px dashed #7bd389;
+    color: #7bd389;
+    padding: 10px 11px 10px 10px;
+    margin-top: 20px;
+}
