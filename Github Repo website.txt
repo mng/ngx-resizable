@@ -1,0 +1,9 @@
+GitHub.io repo site
+
+sudo npm install -g angular-cli-ghpages
+
+npm i angular-cli-ghpages --save-dev
+
+ng build --prod --base-href "https://3dgenomes.github.io/ngx-resizable/"
+
+npx ngh --dir=dist/ngx-resizable-demo

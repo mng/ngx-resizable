@@ -95,7 +95,7 @@ export class ResizableComponent implements OnInit {
     switch (this.dragDir) {
       case 'top':
         operand = -1;
-        break;
+        /* falls through */
       case 'bottom':
         const height = (this.h - offset * this.vy * operand) + 'px';
         if (this.rFlex) {
@@ -106,7 +106,7 @@ export class ResizableComponent implements OnInit {
         break;
       case 'left':
         operand = -1;
-        break;
+        /* falls through */
       case 'right':
         const width = (this.w - offset * this.vx * operand) + 'px';
         if (this.rFlex) {

@@ -1,8 +1,28 @@
 {
-  "name": "ngx-resizable",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  }
+  "name": "@3dgenomes/ngx-resizable",
+  "version": "1.0.1",
+  "description": "A Resizable Split-Pane Layout for Angular6+",
+  "main": "karma.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3DGenomes/ngx-resizable.git"
+  },
+  "keywords": [
+    "angular",
+    "javascript",
+    "typescript",
+    "resizable",
+    "layout",
+    "split",
+    "3dgenomes"
+  ],
+  "author": "Mike Goodstadt <mikegoodstadt@gmail.com> (http://mikegoodstadt.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3DGenomes/ngx-resizable/issues"
+  },
+  "homepage": "https://3dgenomes.github.io/ngx-resizable/"
 }
