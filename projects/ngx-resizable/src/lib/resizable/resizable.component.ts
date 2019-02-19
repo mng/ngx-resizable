@@ -1,5 +1,5 @@
 import { Component, OnInit, HostBinding, Input, ElementRef, Inject,
-   ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+   ViewEncapsulation, Output, EventEmitter, ViewChild, Renderer2, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'rsz-layout',
@@ -8,7 +8,7 @@ import { Component, OnInit, HostBinding, Input, ElementRef, Inject,
   providers: [ { provide: 'Window', useValue: window } ],
   encapsulation: ViewEncapsulation.None
 })
-export class ResizableComponent implements OnInit {
+export class ResizableComponent implements OnInit, AfterViewInit {
 
   @HostBinding('class.resizable') resizable = true;
   @HostBinding('class.no-transition') noTransition = false;
@@ -41,9 +41,15 @@ export class ResizableComponent implements OnInit {
 
   private info = {};
 
-  constructor(private regionElement: ElementRef, @Inject('Window') private window: any) {
-      this.nativeElement = this.regionElement.nativeElement;
-    this.style = this.window.getComputedStyle(this.nativeElement, null);
+  // constructor(private regionElement: ElementRef, @Inject('Window') private window: any) {
+  //     this.nativeElement = this.regionElement.nativeElement;
+  //   this.style = this.window.getComputedStyle(this.nativeElement, null);
+  // }
+
+  constructor(private regionElement: ElementRef) {
+    this.nativeElement = this.regionElement.nativeElement;
+    this.style = getComputedStyle(this.nativeElement);
+    console.log(this.style);
   }
 
   ngOnInit() {
@@ -51,6 +57,11 @@ export class ResizableComponent implements OnInit {
     this.flexBasis = 'flexBasis' in this.nativeElement.style ? 'flexBasis' :
       'webkitFlexBasis' in this.nativeElement.style ? 'webkitFlexBasis' :
       'msFlexPreferredSize' in this.nativeElement.style ? 'msFlexPreferredSize' : 'flexBasis';
+  }
+
+  ngAfterViewInit() {
+    // this.nativeElement = this.renderer.selectRootElement(this.input['nativeElement']);
+    // this.style = getComputedStyle(this.nativeElement);
   }
 
   private updateInfo(e) {
