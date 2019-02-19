@@ -1,6 +1,6 @@
 {
-  "name": "@3dgenomes/ngx-resizable",
-  "version": "1.7.0",
+  "name": "ngx-resizable",
+  "version": "1.7.1",
   "description": "A Resizable Split-Pane Layout for Angular6+",
   "main": "karma.conf.js",
   "scripts": {

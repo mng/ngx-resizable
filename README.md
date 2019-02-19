@@ -1,5 +1,5 @@
 # Resizable Split Pane Layout
-This has been adapted from the [@11mb/angular-resizable](https://github.com/11mb/angular-resizable), itself an Angular2 version of  [@reklino/angular-resizable](https://github.com/Reklino/angular-resizable) for AngularJS. Similar work in JavaScript can be found at [@nathancahill/Split.js](https://nathancahill.github.io/Split.js/), [@RickStrahl/jquery-resizable](https://github.com/RickStrahl/jquery-resizable)
+This has been adapted from the [@11mb/angular-resizable](https://github.com/11mb/angular-resizable), itself an Angular2 version of  [@reklino/angular-resizable](https://github.com/Reklino/angular-resizable) for AngularJS. Similar work in JavaScript: [@RickStrahl/jquery-resizable](https://github.com/RickStrahl/jquery-resizable); [Split.js](https://split.js.org/) by [@nathancahill](https://github.com/nathancahill/split/).
 
 ## Usage
 Installation instructions

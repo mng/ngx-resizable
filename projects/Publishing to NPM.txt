@@ -1,9 +1,3 @@
-// Generate new Library in Projects
-ng generate library ngx-resizable --prefix rsz
-
-// Generate new component in library
-ng generate component component-name --prefix rsz --project ngx-resizable --export
-
 // Build library
 ng build ngx-resizable
 

@@ -1,1 +1,2 @@
+// Build ngx-resizable-demo to /docs
 ng build --prod --base-href https://3dgenomes.github.io/ngx-resizable/ --output-path docs
