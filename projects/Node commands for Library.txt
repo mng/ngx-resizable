@@ -6,3 +6,13 @@ ng generate component component-name --prefix rsz --project ngx-resizable --expo
 
 // Build library
 ng build ngx-resizable
+
+// Initial Publish on NPM
+// N.B. from library root
+cd ngx-resizable/
+npm publish --access public
+
+// Update on NPM
+// N.B. from library root
+cd ngx-resizable/
+npm update @3dgenomes/ngx-resizable
