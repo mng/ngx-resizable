@@ -49,7 +49,7 @@ export class ResizableComponent implements OnInit, AfterViewInit {
   constructor(private regionElement: ElementRef) {
     this.nativeElement = this.regionElement.nativeElement;
     this.style = getComputedStyle(this.nativeElement);
-    console.log(this.style);
+    // console.log(this.style);
   }
 
   ngOnInit() {
