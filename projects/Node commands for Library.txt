@@ -7,7 +7,12 @@ ng generate component component-name --prefix rsz --project ngx-resizable --expo
 // Build library
 ng build ngx-resizable
 
-// Initial Publish on NPM
+// Login to NPM
+user: mikegoodstadt
+password:
+email: mikegoodstadt@gmail.com
+
+// Publish on NPM
 // N.B. from library root
 cd ngx-resizable/
 npm publish --access public

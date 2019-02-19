@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare var require: any;
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-resizable-demo';
+  title = 'ngx-resizable';
+  version: string = require( '../../package.json').version;
+
+  constructor() {
+    console.log('Demo of ngx-resizable:', this.version);
+   }
+
 }
