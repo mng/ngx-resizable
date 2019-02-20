@@ -7,8 +7,9 @@ declare var require: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-resizable';
-  version: string = require( '../../package.json').version;
+  app = require( 'ngx-resizable/package.json');
+  title = this.app.name;
+  version: string = this.app.version;
 
   constructor() {
     console.log('Demo of ngx-resizable:', this.version);

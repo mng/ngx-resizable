@@ -1,2 +1,4 @@
 // Build ngx-resizable-demo to /docs
+// NOTE: @3dgenomes in library package name causes a conflict
+// rename temporarily to build then undo as it is requried to publish on NPM
 ng build --prod --base-href https://3dgenomes.github.io/ngx-resizable/ --output-path docs

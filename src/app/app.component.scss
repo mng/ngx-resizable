@@ -1,13 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+$color1: #343e3d;
+$color2: #607466;
+$color3: #aedcc0;
+$color4: #7bd389;
+$color5: #38e4ae;
+
 :host {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+  font-family: 'Varela Round', 'Helvetica', sans-serif;
+  color: $color1;
 }
+h1 {
+  margin: 0.6em 0;
+}
+h1 a {
+  color: $color1;
+  text-decoration: none;
+}
+h2, h3, h4, h5 {
+  margin: 0 0 0.6em;
+}
+p {
+  margin: 0.6em 0;
+} 
 .icon-big {
-    font-size: 32px;
-    border: 2px dashed #7bd389;
-    color: #7bd389;
-    padding: 10px 11px 10px 10px;
-    margin-top: 20px;
+  font-size: 32px;
+  border: 2px dashed $color4;
+  color: $color4;
+  padding: 10px 11px 10px 10px;
+}
+rsz-layout.cell {
+  padding: 1em 1.75em;
+  &.one {
+    text-align: center;
+  }
+  &.two {
+    background: $color4;
+  }
+  &.three {
+    background: $color5;
+  }
+  &.four {
+    padding: 0;
+  }
 }
