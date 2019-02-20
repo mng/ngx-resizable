@@ -26,7 +26,63 @@ h2, h3, h4, h5 {
 }
 p {
   margin: 0.6em 0;
-} 
+}
+
+/* Button reset */
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* show a hand cursor on hover; some argue that we
+  should keep the default arrow cursor for buttons */
+  cursor: pointer;
+}
+/* Button component */
+.btn {
+  /* default for <button>, but needed for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8em;
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px $color2;
+  border-radius: 4px;
+  /* button size comes from text + padding, avoid height */
+  padding: 0.2em;
+  /* make sure colors have enough contrast! */
+  color: $color2;
+  background-color: white;
+}
+/* old-school "down" effect on clic + color tweak */
+.btn:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+/* inverse colors on hover */
+.btn:hover {
+  color: $color4;
+  border-color: currentColor;
+  background-color: $color2;
+}
+/* Firefox: remove the inner border shown on focus */
+.btn::-moz-focus-inner {
+  border: none;
+}
+/* make sure we have a visible focus ring */
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px $color2,
+    0 0 0 1.5px $color2;
+}
+/* hide focus style if not from keyboard navigation */
+.js-focus-visible .btn:focus:not(.focus-visible) {
+  box-shadow: none;
+}
+
 .icon-big {
   font-size: 32px;
   border: 2px dashed $color4;
@@ -46,5 +102,6 @@ rsz-layout.cell {
   }
   &.four {
     padding: 0;
+    background: no-repeat url('https://www.designrush.com/resources/publicdomainarchive//wp-content/uploads/2014/12/public-domain-images-free-stock-photos-high-quality-resolution-downloads-public-domain-archive-7-1000x665.jpg');
   }
 }

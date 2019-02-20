@@ -1,6 +1,6 @@
-<div class="content" [ngClass]="{'cols': cols}">
-  <rsz-layout class="row" [directions]="[cells.a]" [rFlex]="true">
-    <rsz-layout class="cell one" [directions]="[cells.a1]" [rFlex]="true">
+<div class="content cols">
+  <rsz-layout class="row" [directions]="['right']" [rFlex]="true">
+    <rsz-layout class="cell one" [directions]="['bottom']" [rFlex]="true">
       <span class="icon-big icon_expand-1"></span>
       <h1>
         <a href="https://3dgenomes.github.io/ngx-resizable/">{{ title }}</a>
@@ -8,27 +8,27 @@
       <h4>Version {{version}}</h4>
       <img width="150" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
     </rsz-layout>
-    <rsz-layout class="cell two" [directions]="[cells.a2]" [rFlex]="false">
+    <rsz-layout class="cell two" [directions]="['none']" [rFlex]="false">
       <h3>NGX-Resizable is a slit-pane layout component for workspaces.</h3>
       <p>
         This has been adapted from the <a href="https://github.com/11mb/angular-resizable" target="_blank">@11mb/angular-resizable</a>, itself an Angular2 version of  <a href="https://github.com/Reklino/angular-resizable" target="_blank">@reklino/angular-resizable</a> for AngularJS.
         Similar designs in vanilla JavaScript are <a href="https://github.com/RickStrahl/jquery-resizable" target="_blank">@RickStrahl/jquery-resizable</a> and <a href="https://split.js.org/" target="_blank">Split.js</a> by <a href="https://github.com/nathancahill/split/" target="_blank">@nathancahill</a>.
       </p>
       <p>
-        At <a href="http://3dgenomes.org" target="_blank">3DGenomes.org</a> we use NGX-Resizable as one of the layout options for our 3D genomics browser TADkit.
+        At <a href="http://3dgenomes.org" target="_blank">3DGenomes.org</a> we use NGX-REsizable as one of the layout options for our 3D genomics browser TADkit.
       </p>   
+      <a href="https://github.com/3dgenomes/ngx-resizable" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
     </rsz-layout>
   </rsz-layout>
-  <rsz-layout class="row" [directions]="[cells.b]" [rFlex]="false">
-    <rsz-layout class="cell three" [directions]="[cells.b1]" [rFlex]="true">
+  <rsz-layout class="row" [directions]="['none']" [rFlex]="false">
+    <rsz-layout class="cell three" [directions]="['bottom']" [rFlex]="true">
       <p>An Angular 7+ directive for creating resizable containers.</p>
       <p><a href="https://github.com/3dgenomes/ngx-resizable" target="_blank">GitHub Repo</a></p>
-      <button class="btn" (click)="toggleDirection()">Changle Direction</button>
       <p><a href="https://stackblitz.com/edit/3dgenomes-ngx-resizable" target="_blank">Stackblitz Demo (horizontal)</a></p>
       <p><a href="https://stackblitz.com/edit/3dgenomes-ngx-resizable-vert" target="_blank">Stackblitz Demo (vertical)</a></p>
+      
     </rsz-layout>
-    <rsz-layout class="cell four" [directions]="[cells.b2]" [rFlex]="false">
+    <rsz-layout class="cell four" [directions]="['none']" [rFlex]="false">
     </rsz-layout>
   </rsz-layout>
-  <a href="https://github.com/3dgenomes/ngx-resizable" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 </div>

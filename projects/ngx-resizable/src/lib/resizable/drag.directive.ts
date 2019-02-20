@@ -1,12 +1,9 @@
-import { Directive, ElementRef, Output, OnInit, EventEmitter, Inject, HostListener } from '@angular/core';
-import { DOCUMENT } from '@angular/platform-browser';
-
+import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[rszDragHandle]',
-  providers: [ { provide: DOCUMENT, useValue: document } ],
+  selector: '[rszDragHandle]'
 })
-export class DragDirective implements OnInit {
+export class DragDirective {
 
   @Output() DragStart = new EventEmitter();
   @Output() Drag = new EventEmitter();
@@ -33,31 +30,5 @@ export class DragDirective implements OnInit {
     if (this.dragging) {
       this.Drag.emit({ originalEvent: event });
     }
-  }
-
-  constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: any) { }
-
-  ngOnInit() {
-    // const el = this.elementRef.nativeElement;
-    // el.addEventListener('mousedown', (event) => {
-    //   if (event.which === 1) {
-    //     this.dragging = true;
-    //     this.DragStart.emit({ originalEvent: event });
-    //   }
-    // }, false);
-
-    // this.document.addEventListener('mouseup', (event) => {
-    //   if (this.dragging) {
-    //     this.DragEnd.emit({ originalEvent: event });
-    //   }
-
-    //   this.dragging = false;
-    // }, false);
-
-    // this.document.addEventListener('mousemove', (event) => {
-    //   if (this.dragging) {
-    //     this.Drag.emit({ originalEvent: event });
-    //   }
-    // }, false);
   }
 }
