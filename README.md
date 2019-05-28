@@ -120,7 +120,10 @@ This event is emitted at the end of a resize with the following object as an arg
 
 ## Version notes
 
-### 1.0.1
+### 1.7.2
+- Fix aot compile issue since window does not exist
+
+### 1.7.1
 - Add README.md
 - Export component via public_api.ts
 
