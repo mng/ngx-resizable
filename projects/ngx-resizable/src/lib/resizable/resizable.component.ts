@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding, Input, ElementRef,
    ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { NgxResizeableWindowRef } from '../window.service';
 
 @Component({
   selector: 'rsz-layout',
@@ -41,9 +42,9 @@ export class ResizableComponent implements OnInit {
 
   private info = {};
 
-  constructor(private regionElement: ElementRef) {
+  constructor(private regionElement: ElementRef, private windowRef: NgxResizeableWindowRef) {
     this.nativeElement = this.regionElement.nativeElement;
-    this.style = getComputedStyle(this.nativeElement);
+    this.style = windowRef.nativeWindow.getComputedStyle(this.nativeElement);
   }
 
   ngOnInit() {
