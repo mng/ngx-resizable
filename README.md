@@ -120,6 +120,9 @@ This event is emitted at the end of a resize with the following object as an arg
 
 ## Version notes
 
+### 1.7.3
+- Update deps to fix TAR security
+
 ### 1.7.2
 - Fix aot compile issue since window does not exist
 
