@@ -1,4 +1,20 @@
 // Build ngx-resizable-demo to /docs
 // NOTE: @3dgenomes in library package name causes a conflict
-// rename temporarily to build then undo as it is requried to publish on NPM
+// but the owner path is requried to publish on NPM
+// Change temporarily, build library, build documentation, then revert
+```
+{
+  "name": "@3dgenomes/ngx-resizable",
+  "version": "1.7.2",
+  "description": "A Resizable Split-Pane Layout for Angular6+",
+  ...
+´´´
+Change to:
+```
+{
+  "name": "ngx-resizable",
+  "version": "1.7.2",
+  "description": "A Resizable Split-Pane Layout for Angular6+",
+  ...
+´´´
 ng build --prod --base-href https://3dgenomes.github.io/ngx-resizable/ --output-path docs
