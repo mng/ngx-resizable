@@ -1,16 +1,24 @@
 {
   "name": "ngx-resizable-demo",
-  "version": "1.7.2",
+  "version": "1.0.4",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build_lib": "ng build ngx-resizable",
+    "copy-license": "cp LICENSE.txt dist/ngx-resizable",
+    "copy-readme": "cp README.md dist/ngx-resizable",
+    "copy-files": "npm run copy-license && npm run copy-readme",
+    "npm_pack": "cd dist/ngx-resizable && npm pack",
+    "demo2docs": "ng build --base-href https://3dgenomes.github.io/ngx-resizable/ --output-path docs",
+    "package": "npm run build_lib && npm run copy-files && npm run npm_pack && npm run demo2docs",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
+    "@3dgenomes/ngx-resizable": "^1.7.1",
     "@angular/animations": "^7.2.15",
     "@angular/common": "^7.2.15",
     "@angular/compiler": "^7.2.15",
