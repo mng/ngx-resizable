@@ -1,5 +1,4 @@
-import { Component, OnInit, HostBinding, Input, ElementRef,
-   ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, HostBinding, Input, ElementRef, ViewEncapsulation, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { NgxResizeableWindowRef } from '../window.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { NgxResizeableWindowRef } from '../window.service';
   providers: [ { provide: 'Window', useValue: window } ],
   encapsulation: ViewEncapsulation.None
 })
-export class ResizableComponent implements OnInit {
+export class ResizableComponent implements OnInit, AfterViewInit {
 
   @HostBinding('class.resizable') resizable = true;
   @HostBinding('class.no-transition') noTransition = false;
@@ -44,7 +43,6 @@ export class ResizableComponent implements OnInit {
 
   constructor(private regionElement: ElementRef, private windowRef: NgxResizeableWindowRef) {
     this.nativeElement = this.regionElement.nativeElement;
-    this.style = windowRef.nativeWindow.getComputedStyle(this.nativeElement);
   }
 
   ngOnInit() {
@@ -52,6 +50,10 @@ export class ResizableComponent implements OnInit {
     this.flexBasis = 'flexBasis' in this.nativeElement.style ? 'flexBasis' :
       'webkitFlexBasis' in this.nativeElement.style ? 'webkitFlexBasis' :
       'msFlexPreferredSize' in this.nativeElement.style ? 'msFlexPreferredSize' : 'flexBasis';
+  }
+
+  ngAfterViewInit() {
+    this.style = this.windowRef.nativeWindow.getComputedStyle(this.nativeElement);
   }
 
   private updateInfo(e) {
