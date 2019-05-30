@@ -4,10 +4,10 @@
 /*!*****************************************!*\
   !*** ./dist/ngx-resizable/package.json ***!
   \*****************************************/
-/*! exports provided: name, version, description, main, repository, keywords, author, license, bugs, homepage, module, es2015, esm5, esm2015, fesm5, fesm2015, typings, metadata, sideEffects, dependencies, default */
+/*! exports provided: name, version, description, repository, keywords, author, license, bugs, homepage, main, module, es2015, esm5, esm2015, fesm5, fesm2015, typings, metadata, sideEffects, dependencies, default */
 /***/ (function(module) {
 
-module.exports = {"name":"@3dgenomes/ngx-resizable","version":"1.7.4","description":"A Resizable Split-Pane Layout for Angular6+","main":"bundles/3dgenomes-ngx-resizable.umd.js","repository":{"type":"git","url":"git+https://github.com/3DGenomes/ngx-resizable.git"},"keywords":["angular","javascript","typescript","resizable","layout","split","3dgenomes"],"author":"Mike Goodstadt <mikegoodstadt@gmail.com> (http://mikegoodstadt.com)","license":"MIT","bugs":{"url":"https://github.com/3DGenomes/ngx-resizable/issues"},"homepage":"https://3dgenomes.github.io/ngx-resizable/","module":"fesm5/3dgenomes-ngx-resizable.js","es2015":"fesm2015/3dgenomes-ngx-resizable.js","esm5":"esm5/3dgenomes-ngx-resizable.js","esm2015":"esm2015/3dgenomes-ngx-resizable.js","fesm5":"fesm5/3dgenomes-ngx-resizable.js","fesm2015":"fesm2015/3dgenomes-ngx-resizable.js","typings":"3dgenomes-ngx-resizable.d.ts","metadata":"3dgenomes-ngx-resizable.metadata.json","sideEffects":false,"dependencies":{"tslib":"^1.9.0"}};
+module.exports = {"name":"@3dgenomes/ngx-resizable","version":"1.7.5","description":"A Resizable Split-Pane Layout for Angular6+","repository":{"type":"git","url":"git+https://github.com/3DGenomes/ngx-resizable.git"},"keywords":["angular","javascript","typescript","resizable","layout","split","3dgenomes"],"author":"Mike Goodstadt <mikegoodstadt@gmail.com> (http://mikegoodstadt.com)","license":"MIT","bugs":{"url":"https://github.com/3DGenomes/ngx-resizable/issues"},"homepage":"https://3dgenomes.github.io/ngx-resizable/","main":"bundles/3dgenomes-ngx-resizable.umd.js","module":"fesm5/3dgenomes-ngx-resizable.js","es2015":"fesm2015/3dgenomes-ngx-resizable.js","esm5":"esm5/3dgenomes-ngx-resizable.js","esm2015":"esm2015/3dgenomes-ngx-resizable.js","fesm5":"fesm5/3dgenomes-ngx-resizable.js","fesm2015":"fesm2015/3dgenomes-ngx-resizable.js","typings":"3dgenomes-ngx-resizable.d.ts","metadata":"3dgenomes-ngx-resizable.metadata.json","sideEffects":false,"dependencies":{"tslib":"^1.9.0"}};
 
 /***/ }),
 
@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _3dgenomes_ngx_resizable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @3dgenomes/ngx-resizable */ "./node_modules/@3dgenomes/ngx-resizable/fesm5/ngx-resizable.js");
+/* harmony import */ var _3dgenomes_ngx_resizable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @3dgenomes/ngx-resizable */ "./node_modules/@3dgenomes/ngx-resizable/fesm5/3dgenomes-ngx-resizable.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

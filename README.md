@@ -120,6 +120,9 @@ This event is emitted at the end of a resize with the following object as an arg
 
 ## Library Version notes
 
+### 1.7.5
+- Correct NPM upload
+
 ### 1.7.4
 - Update packaging
 
