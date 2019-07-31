@@ -2,6 +2,8 @@
 This has been adapted from the [@11mb/angular-resizable](https://github.com/11mb/angular-resizable), itself an Angular2 version of  [@reklino/angular-resizable](https://github.com/Reklino/angular-resizable) for AngularJS. Similar work in JavaScript: [@RickStrahl/jquery-resizable](https://github.com/RickStrahl/jquery-resizable); [Split.js](https://split.js.org/) by [@nathancahill](https://github.com/nathancahill/split/).
 
 ## Usage
+Checkout and fork this [StackBlitz example](https://stackblitz.com/edit/angular-ngx-resizable-181) !
+
 Installation instructions
 Install ngx-bootstrap from npm:
 
@@ -118,13 +120,13 @@ This event is emitted at the end of a resize with the following object as an arg
 - `info.id` : The id of the directive. **Will be false if there is no id set.**
 - `info.evt` : original mouse event object
 
-## Library Version notes
+## Changelog
 
-### 1.8.0
-- Update to Angular 8
+### 1.8.1
+- Update to Angular 8 [ [StackBlitz Demo](https://stackblitz.com/edit/angular-ngx-resizable-181) ]
 
 ### 1.7.5
-- Correct NPM upload
+- Correct NPM upload [ [StackBlitz Demo](https://stackblitz.com/edit/angular-ngx-resizable-175) ]
 
 ### 1.7.4
 - Update packaging
@@ -164,9 +166,8 @@ Run `npm run package` to build the project. The build artifacts and NPM tarball 
 After building and commit/push/merge to Github:
 1. update the version notes in the root README.md
 2. update the version number in the library: `projects/ngx-resizable/package.json`
-3. login to npm: `npm login`
-4. go to the library directory: `cd projects/ngx-resizable/`
-5. publish using: `npm publish --access public`.
+3. login to npm: `npm login` (check if already loggedin using `npm whoami`)
+4. publish using: `npm publish ./dist/ngx-resizable/3dgenomes-ngx-resizable-1.8.1.tgz --access public`.
 
 ## Running unit tests
 

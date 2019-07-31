@@ -1,6 +1,6 @@
 {
   "name": "@3dgenomes/ngx-resizable",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "A Resizable Split-Pane Layout for Angular6+",
   "repository": {
     "type": "git",
