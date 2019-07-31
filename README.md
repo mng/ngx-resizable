@@ -120,6 +120,9 @@ This event is emitted at the end of a resize with the following object as an arg
 
 ## Library Version notes
 
+### 1.8.0
+- Update to Angular 8
+
 ### 1.7.5
 - Correct NPM upload
 
@@ -147,7 +150,7 @@ This event is emitted at the end of a resize with the following object as an arg
 MIT
 
 # Development
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Demo app development server
 
@@ -158,7 +161,7 @@ Run `ng s` for a dev server. Navigate to `http://localhost:4200/`. The demo app 
 Run `npm run package` to build the project. The build artifacts and NPM tarball will be stored in the `dist/` directory. The demo app will be stored in the `docs/` directory and automatically published to `https://3dgenomes.github.io/ngx-resizable/` when pushed to GitHub.
 
 ## Publishing to NPM
-After building:
+After building and commit/push/merge to Github:
 1. update the version notes in the root README.md
 2. update the version number in the library: `projects/ngx-resizable/package.json`
 3. login to npm: `npm login`
