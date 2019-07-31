@@ -3,7 +3,9 @@ This has been adapted from the [@11mb/angular-resizable](https://github.com/11mb
 
 ## Usage
 Checkout and fork these examples (see also explanations below):
+
 [StackBlitz - Default Horizontal Layout (HTML-like table rows)](https://stackblitz.com/edit/angular-ngx-resizable-181)
+
 [StackBlitz - Vertical/Columns Layout](https://stackblitz.com/edit/angular-ngx-resizable-vert-181) !
 
 ### Installation instructions
