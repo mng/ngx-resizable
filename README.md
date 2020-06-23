@@ -20,7 +20,7 @@ import { NgxResizableModule } from '@3dgenomes/ngx-resizable';
 
 @NgModule({
   ...
-  imports: [ResizableComponent,...]
+  imports: [NgxResizableModule,...]
   ...
 })
 ```
