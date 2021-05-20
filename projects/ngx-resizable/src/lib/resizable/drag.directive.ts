@@ -1,34 +1,60 @@
 import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
 
+export type DragEvent = {x: number, y: number};
+
 @Directive({
   selector: '[rszDragHandle]'
 })
 export class DragDirective {
 
   @Output() DragStart = new EventEmitter();
-  @Output() Drag = new EventEmitter();
+  @Output() Drag = new EventEmitter<DragEvent>();
   @Output() DragEnd = new EventEmitter();
 
   private dragging = false;
 
   @HostListener('mousedown', ['$event'])
-  onMousedown(event) {
-    if (event.which === 1) {
+  onMousedown(e: MouseEvent) {
+    if (e.which === 1) {
       this.dragging = true;
-      this.DragStart.emit({ originalEvent: event });
+      this.DragStart.emit({ x: e.clientX, y: e.clientY });
     }
   }
+  @HostListener('touchstart', ['$event'])
+  onTouchstart(e: TouchEvent) {
+    const touch = e.touches[0];
+    this.dragging = true;
+    this.DragStart.emit({ x: touch.clientX, y: touch.clientY });
+  }
+
   @HostListener('document:mouseup', ['$event'])
-  onMouseup(event) {
+  onMouseup(e: MouseEvent) {
     if (this.dragging) {
-      this.DragEnd.emit({ originalEvent: event });
+      this.DragEnd.emit({ x: e.clientX, y: e.clientY });
     }
     this.dragging = false;
   }
-  @HostListener('document:mousemove', ['$event'])
-  onMousemove(event: MouseEvent) {
+  @HostListener('document:touchend', ['$event'])
+  @HostListener('document:touchcancel', ['$event'])
+  onTouchend(e: TouchEvent) {
     if (this.dragging) {
-      this.Drag.emit({ originalEvent: event });
+      const touch = e.changedTouches[0];
+      this.DragEnd.emit({ x: touch.clientX, y: touch.clientY });
+    }
+    this.dragging = false;
+  }
+
+  @HostListener('document:mousemove', ['$event'])
+  onMousemove(e: MouseEvent) {
+    if (this.dragging) {
+      this.Drag.emit({ x: e.clientX, y: e.clientY });
+    }
+  }
+  @HostListener('document:touchmove', ['$event'])
+  onTouchmove(e: TouchEvent) {
+    if (this.dragging) {
+      const touch = e.touches[0];
+      this.Drag.emit({ x: touch.clientX, y: touch.clientY });
     }
   }
 }

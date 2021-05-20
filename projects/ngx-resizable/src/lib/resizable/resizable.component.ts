@@ -56,7 +56,7 @@ export class ResizableComponent implements OnInit, AfterViewInit {
     this.style = this.windowRef.nativeWindow.getComputedStyle(this.nativeElement);
   }
 
-  private updateInfo(e) {
+  private updateInfo(e: DragEvent) {
     this.info['width'] = false; this.info['height'] = false;
     if (this.axis === 'x') {
       this.info['width'] = parseInt(this.nativeElement.style[this.rFlex ? this.flexBasis : 'width'], 10);
@@ -67,12 +67,10 @@ export class ResizableComponent implements OnInit, AfterViewInit {
     this.info['evt'] = e;
   }
 
-  public dragStart(e, direction) {
-    const mouseEvent = e.originalEvent;
-
+  public dragStart(e: DragEvent, direction) {
     this.dragDir = direction;
     this.axis = (this.dragDir === 'left' || this.dragDir === 'right') ? 'x' : 'y';
-    this.start = (this.axis === 'x' ? mouseEvent.clientX : mouseEvent.clientY);
+    this.start = (this.axis === 'x' ? e.x : e.y);
     this.w = parseInt(this.style.getPropertyValue('width'), 10);
     this.h = parseInt(this.style.getPropertyValue('height'), 10);
 
@@ -82,17 +80,14 @@ export class ResizableComponent implements OnInit, AfterViewInit {
     this.noTransition = true;
   }
 
-  public dragEnd(e) {
-    const mouseEvent = e.originalEvent;
-
-    this.updateInfo(mouseEvent);
+  public dragEnd(e: DragEvent) {
+    this.updateInfo(e);
     this.resizeEnd.emit({ info: this.info });
     this.noTransition = false;
   }
 
-  public dragging(e) {
-    const mouseEvent = e.originalEvent;
-    const offset = (this.axis === 'x') ? this.start - mouseEvent.clientX : this.start - mouseEvent.clientY;
+  public dragging(e: DragEvent) {
+    const offset = (this.axis === 'x') ? this.start - e.x : this.start - e.y;
 
     let operand = 1;
     switch (this.dragDir) {
@@ -119,7 +114,7 @@ export class ResizableComponent implements OnInit, AfterViewInit {
         }
         break;
     }
-    this.updateInfo(mouseEvent);
+    this.updateInfo(e);
     this.resizing.emit({ info: this.info });
   }
 }
