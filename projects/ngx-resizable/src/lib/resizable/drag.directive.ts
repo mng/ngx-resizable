@@ -1,15 +1,15 @@
 import { Directive, Output, EventEmitter, HostListener } from '@angular/core';
 
-export type DragEvent = {x: number, y: number};
+export type Point = {x: number, y: number};
 
 @Directive({
   selector: '[rszDragHandle]'
 })
 export class DragDirective {
 
-  @Output() DragStart = new EventEmitter();
-  @Output() Drag = new EventEmitter<DragEvent>();
-  @Output() DragEnd = new EventEmitter();
+  @Output() DragStart = new EventEmitter<Point>();
+  @Output() Drag = new EventEmitter<Point>();
+  @Output() DragEnd = new EventEmitter<Point>();
 
   private dragging = false;
 

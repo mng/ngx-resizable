@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding, Input, ElementRef, ViewEncapsulation, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { NgxResizeableWindowRef } from '../window.service';
+import { Point } from './drag.directive';
 
 @Component({
   selector: 'rsz-layout',
@@ -56,7 +57,7 @@ export class ResizableComponent implements OnInit, AfterViewInit {
     this.style = this.windowRef.nativeWindow.getComputedStyle(this.nativeElement);
   }
 
-  private updateInfo(e: DragEvent) {
+  private updateInfo(p: Point) {
     this.info['width'] = false; this.info['height'] = false;
     if (this.axis === 'x') {
       this.info['width'] = parseInt(this.nativeElement.style[this.rFlex ? this.flexBasis : 'width'], 10);
@@ -64,13 +65,13 @@ export class ResizableComponent implements OnInit, AfterViewInit {
       this.info['height'] = parseInt(this.nativeElement.style[this.rFlex ? this.flexBasis : 'height'], 10);
     }
     this.info['id'] = this.nativeElement.id;
-    this.info['evt'] = e;
+    this.info['point'] = p;
   }
 
-  public dragStart(e: DragEvent, direction) {
+  public dragStart(p: Point, direction) {
     this.dragDir = direction;
     this.axis = (this.dragDir === 'left' || this.dragDir === 'right') ? 'x' : 'y';
-    this.start = (this.axis === 'x' ? e.x : e.y);
+    this.start = (this.axis === 'x' ? p.x : p.y);
     this.w = parseInt(this.style.getPropertyValue('width'), 10);
     this.h = parseInt(this.style.getPropertyValue('height'), 10);
 
@@ -80,14 +81,14 @@ export class ResizableComponent implements OnInit, AfterViewInit {
     this.noTransition = true;
   }
 
-  public dragEnd(e: DragEvent) {
-    this.updateInfo(e);
+  public dragEnd(p: Point) {
+    this.updateInfo(p);
     this.resizeEnd.emit({ info: this.info });
     this.noTransition = false;
   }
 
-  public dragging(e: DragEvent) {
-    const offset = (this.axis === 'x') ? this.start - e.x : this.start - e.y;
+  public dragging(p: Point) {
+    const offset = (this.axis === 'x') ? this.start - p.x : this.start - p.y;
 
     let operand = 1;
     switch (this.dragDir) {
@@ -114,7 +115,7 @@ export class ResizableComponent implements OnInit, AfterViewInit {
         }
         break;
     }
-    this.updateInfo(e);
+    this.updateInfo(p);
     this.resizing.emit({ info: this.info });
   }
 }
